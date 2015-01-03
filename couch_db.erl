@@ -1,5 +1,5 @@
 -module(couch_db).
--export([get/3, post/4, put/4, delete/3]).
+-export([get/3, post/4, put/3, delete/3]).
 
 %% URL being something like http://localhost:5984/DATABASE
 %% couch_db:get("http://localhost:5984/DATABASE/_design/clients/_view/clients", "root", "").
@@ -35,5 +35,4 @@ to_response(Query, Status, Authorization, CouchResponse) ->
 		{auth, Authorization},
 		{data, CouchResponse}
 	]},
-	%% io:format("~p", [Message]),
 	Message.
